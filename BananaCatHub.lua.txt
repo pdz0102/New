@@ -71,7 +71,7 @@ local Main = Instance.new("Frame")
 Main.Name                = "Main"
 Main.Size                = UDim2.new(0, WIN_W, 0, WIN_H)
 Main.Position            = UDim2.new(0.5, -WIN_W/2, 0.5, -WIN_H/2)
-Main.BackgroundTransparency = 1  -- trong suốt hoàn toàn
+Main.BackgroundTransparency = 1 -- trong suốt hoàn toàn
 Main.BorderSizePixel     = 0
 Main.ClipsDescendants    = false
 Main.Parent              = ScreenGui
@@ -573,7 +573,7 @@ UpdateToggleImage()
 -- ══════════════════════════════════════════
 --  NOTIFY KHI LOAD XONG
 -- ══════════════════════════════════════════
-local NOTIFY_AVATAR = "rbxassetid://0" -- đổi ID ảnh avatar ở đây
+local NOTIFY_AVATAR = "rbxassetid://" -- đổi ID ảnh avatar ở đây
 
 local NotifyGui = Instance.new("ScreenGui")
 NotifyGui.Name           = "BananaCatNotify"
