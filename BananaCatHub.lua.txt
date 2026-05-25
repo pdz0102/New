@@ -15,9 +15,9 @@ local PGui = LP:WaitForChild("PlayerGui")
 --  Thay ID số vào đây
 -- ══════════════════════════════════════════
 -- ToggleBtn.Image = rbxassetid://
-local IMAGE_OPEN  = "rbxassetid://0"   -- ảnh khi UI đang bật
+local IMAGE_OPEN  = "rbxassetid://139131425211402"   -- ảnh khi UI đang bật
 -- ToggleBtn.Image = rbxassetid://
-local IMAGE_CLOSE = "rbxassetid://0"   -- ảnh khi UI đang tắt
+local IMAGE_CLOSE = "rbxassetid://89311262811917"   -- ảnh khi UI đang tắt
 
 -- ══════════════════════════════════════════
 --  SCREEN GUI
