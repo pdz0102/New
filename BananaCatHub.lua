@@ -15,9 +15,9 @@ local PGui = LP:WaitForChild("PlayerGui")
 --  Thay ID số vào đây
 -- ══════════════════════════════════════════
 -- ToggleBtn.Image = rbxassetid://
-local IMAGE_OPEN  = "rbxassetid://0"   -- ảnh khi UI đang bật
+local IMAGE_OPEN  = "rbxassetid://139131425211402"   -- ảnh khi UI đang bật
 -- ToggleBtn.Image = rbxassetid://
-local IMAGE_CLOSE = "rbxassetid://0"   -- ảnh khi UI đang tắt
+local IMAGE_CLOSE = "rbxassetid://89311262811917"   -- ảnh khi UI đang tắt
 
 -- ══════════════════════════════════════════
 --  SCREEN GUI
@@ -56,7 +56,7 @@ TImage.Size               = UDim2.new(1, 0, 1, 0)
 TImage.BackgroundTransparency = 1
 TImage.Image              = IMAGE_OPEN
 TImage.ZIndex             = 21
-TImage.Visible            = IMAGE_OPEN ~= "rbxassetid://0"
+TImage.Visible            = IMAGE_OPEN ~= "rbxassetid://0" --- để ko cx dc
 TImage.Parent             = ToggleBtn
 local TImageCorner = Instance.new("UICorner")
 TImageCorner.CornerRadius = UDim.new(1, 0)
@@ -65,13 +65,13 @@ TImageCorner.Parent = TImage
 -- ══════════════════════════════════════════
 --  MAIN WINDOW
 -- ══════════════════════════════════════════
-local WIN_W, WIN_H = 760, 490
+local WIN_W, WIN_H = 660, 400
 
 local Main = Instance.new("Frame")
 Main.Name                = "Main"
 Main.Size                = UDim2.new(0, WIN_W, 0, WIN_H)
 Main.Position            = UDim2.new(0.5, -WIN_W/2, 0.5, -WIN_H/2)
-Main.BackgroundTransparency = 1  -- trong suốt hoàn toàn
+Main.BackgroundTransparency = 0.5 -- trong suốt hoàn toàn
 Main.BorderSizePixel     = 0
 Main.ClipsDescendants    = false
 Main.Parent              = ScreenGui
@@ -90,13 +90,13 @@ MainStrokeCorner.Parent = Main
 -- ══════════════════════════════════════════
 local TitleBar = Instance.new("Frame")
 TitleBar.Size                = UDim2.new(1, 0, 0, 44)
-TitleBar.BackgroundTransparency = 1  -- trong suốt
+TitleBar.BackgroundTransparency = 0.6 -- trong suốt
 TitleBar.BorderSizePixel     = 0
 TitleBar.Parent              = Main
 
 local TitleLbl = Instance.new("TextLabel")
 TitleLbl.Size               = UDim2.new(1, 0, 1, 0)
-TitleLbl.BackgroundTransparency = 1
+TitleLbl.BackgroundTransparency = 0.6
 TitleLbl.RichText           = false
 TitleLbl.Text               = "Banana Cat Hub  -  Blox Fruit"
 TitleLbl.TextColor3         = Color3.fromRGB(30, 144, 255)
@@ -113,7 +113,7 @@ TitleLbl.Parent             = TitleBar
 local Body = Instance.new("Frame")
 Body.Size               = UDim2.new(1, 0, 1, -44)
 Body.Position           = UDim2.new(0, 0, 0, 44)
-Body.BackgroundTransparency = 1
+Body.BackgroundTransparency = 0.6
 Body.ClipsDescendants   = false
 Body.BorderSizePixel    = 0
 Body.Parent             = Main
@@ -359,14 +359,16 @@ local TAB_DATA = {
         { section = "Server Info", buttons = {
             { label = "Rejoin Server",       fn = function() pcall(function() game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer) end) end },
             { label = "Copy Server ID",      fn = function() pcall(function() setclipboard(game.JobId) end) end },
-            { label = "Low Player Server",   fn = function() print("[BananaCat] Tìm server ít người") end },
+            { label = "fix lag",   fn = function() loadstring(game:HttpGet("https://pastefy.app/onrHkQfk/raw"))() end },
         }},
     },
 
     ["LocalPlayer"] = {
         { section = "Player", buttons = {
             { label = "Infinite Jump",       fn = function() print("[BananaCat] Infinite Jump ON") end },
-            { label = "Speed Hack x2",       fn = function() game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 32 end },
+            { label = "Night",       fn = function() repeat wait() until game:IsLoaded()
+                                                     script_key = "past the key"
+                                                     loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/BF-Beta.lua"))() end },
             { label = "Anti AFK",            fn = function() pcall(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), CFrame.new()) end) end },
         }},
         { section = "Visual", buttons = {
@@ -650,7 +652,7 @@ UpdateToggleImage()
 -- ══════════════════════════════════════════
 --  NOTIFY KHI LOAD XONG
 -- ══════════════════════════════════════════
-local NOTIFY_AVATAR = "rbxassetid://0" -- đổi ID ảnh avatar ở đây
+local NOTIFY_AVATAR = "rbxassetid://" -- đổi ID ảnh avatar ở đây
 
 local NotifyGui = Instance.new("ScreenGui")
 NotifyGui.Name           = "BananaCatNotify"
